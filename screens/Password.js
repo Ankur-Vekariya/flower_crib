@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
-const Login = () => {
+const Password = (props) => {
+  console.log('props', props);
   const [userName, setUserName] = useState('ankur');
   return (
     <>
-      <StatusBar />
+      {/* <StatusBar /> */}
       <View style={styles.container}>
         <Image style={styles.tinyLogo} source={require('../assets/3129492.jpg')} />
-        <Text style={styles.title}>Please Login</Text>
-        <Text style={styles.message}>Welcome again!</Text>
+        <Text style={styles.title}>Please Enter Password</Text>
+        <Text style={styles.message}>Welcome {props.route.params.name}</Text>
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
         <TouchableOpacity style={styles.saveButton} onPress={() => console.log(userName)}>
           <Text>Save</Text>
@@ -81,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Password;

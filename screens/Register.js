@@ -2,25 +2,26 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 
-const Login = ({ navigation }) => {
+const Register = (props) => {
+  console.log('props', props);
   const [userName, setUserName] = useState('ankur');
   return (
     <>
       {/* <StatusBar /> */}
       <View style={styles.container}>
         <Image style={styles.tinyLogo} source={require('../assets/3129492.jpg')} />
-        <Text style={styles.title}>Please Login</Text>
-        <Text style={styles.message}>Welcome again!</Text>
+        <Text style={styles.title}>Please Enter Password</Text>
+        <Text style={styles.message}>Welcome {props.route.params.name}</Text>
+        <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+        <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+        <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
         <TouchableOpacity style={styles.saveButton} onPress={() => console.log(userName)}>
           <Text>Save</Text>
         </TouchableOpacity>
         <View style={{ display: 'flex', flexDirection: 'row', paddingTop: 10 }}>
           <Text>Don't have account? </Text>
-          <TouchableOpacity
-            style={styles.registerButton}
-            onPress={() => navigation.navigate('register', { name: userName })}
-          >
+          <TouchableOpacity style={styles.registerButton} onPress={() => console.log(userName)}>
             <Text style={styles.registerButton}>Register Now</Text>
           </TouchableOpacity>
         </View>
@@ -84,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Register;
