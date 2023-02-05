@@ -5,27 +5,24 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, KeyboardAvo
 const Login = ({ navigation }) => {
   const [userName, setUserName] = useState('ankur');
   return (
-    <>
-      {/* <StatusBar /> */}
-      <View style={styles.container}>
-        <Image style={styles.tinyLogo} source={require('../assets/3129492.jpg')} />
-        <Text style={styles.title}>Please Login</Text>
-        <Text style={styles.message}>Welcome again!</Text>
-        <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
-        <TouchableOpacity style={styles.saveButton} onPress={() => console.log(userName)}>
-          <Text>Login</Text>
+    <View style={styles.container}>
+      <Image style={styles.tinyLogo} source={require('../assets/3129492.jpg')} />
+      <Text style={styles.title}>Please Login</Text>
+      <Text style={styles.message}>Welcome again!</Text>
+      <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+      <TouchableOpacity style={styles.saveButton} onPress={() => navigation.navigate('home')}>
+        <Text>Login</Text>
+      </TouchableOpacity>
+      <View style={{ display: 'flex', flexDirection: 'row', paddingTop: 10 }}>
+        <Text>Don't have account? </Text>
+        <TouchableOpacity
+          style={styles.registerButton}
+          onPress={() => navigation.navigate('register', { name: userName })}
+        >
+          <Text style={styles.registerButton}>Register Now</Text>
         </TouchableOpacity>
-        <View style={{ display: 'flex', flexDirection: 'row', paddingTop: 10 }}>
-          <Text>Don't have account? </Text>
-          <TouchableOpacity
-            style={styles.registerButton}
-            onPress={() => navigation.navigate('register', { name: userName })}
-          >
-            <Text style={styles.registerButton}>Register Now</Text>
-          </TouchableOpacity>
-        </View>
       </View>
-    </>
+    </View>
   );
 };
 

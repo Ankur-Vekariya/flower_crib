@@ -7,6 +7,7 @@ import Welcome from './screens/Welcome';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo } from '@expo/vector-icons';
 import { createAppContainer } from 'react-navigation';
+import Home from './screens/Home';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -30,6 +31,7 @@ export default function App() {
         <Stack.Screen name="login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="password" component={Password} options={{ headerShown: false }} />
         <Stack.Screen name="register" component={Register} options={{ headerShown: false }} />
+        <Stack.Screen name="home" component={Home} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
