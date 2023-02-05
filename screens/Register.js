@@ -10,11 +10,16 @@ const Register = (props) => {
       {/* <StatusBar /> */}
       <View style={styles.container}>
         <Image style={styles.tinyLogo} source={require('../assets/3129492.jpg')} />
-        <Text style={styles.title}>Please Enter Password</Text>
-        <Text style={styles.message}>Welcome {props.route.params.name}</Text>
+        <Text style={styles.title}>Please Register</Text>
+        <Text style={styles.message}>to connect with us</Text>
+        <Text style={styles.inputLabel}>First Name</Text>
+
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+        <Text style={styles.inputLabel}>Last Name</Text>
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+        <Text style={styles.inputLabel}>Email</Text>
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
+        <Text style={styles.inputLabel}>Address</Text>
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
         <TouchableOpacity style={styles.saveButton} onPress={() => console.log(userName)}>
           <Text>Save</Text>
@@ -47,6 +52,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: '60%',
     height: '20%',
+  },
+  inputLabel: {
+    display: 'flex',
+    justifyContent: 'flex-start',
+    fontWeight: '700',
+    color: '#567189',
   },
   title: {
     fontSize: 30,
