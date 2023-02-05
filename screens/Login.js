@@ -13,7 +13,7 @@ const Login = ({ navigation }) => {
         <Text style={styles.message}>Welcome again!</Text>
         <TextInput style={styles.input} onChangeText={(text) => setUserName(text)} value={userName} />
         <TouchableOpacity style={styles.saveButton} onPress={() => console.log(userName)}>
-          <Text>Save</Text>
+          <Text>Login</Text>
         </TouchableOpacity>
         <View style={{ display: 'flex', flexDirection: 'row', paddingTop: 10 }}>
           <Text>Don't have account? </Text>
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     width: '80%',
     height: 40,
     alignItems: 'center',
-    paddingVertical: 10,
+    paddingVertical: 8,
   },
   message: {
     fontSize: 15,
